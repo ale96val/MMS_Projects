@@ -43,5 +43,6 @@
             android:inputType="number"
             android:textColorHint="#78909C"
             android:textSize="24sp" />
+
     </LinearLayout>
 </LinearLayout>
