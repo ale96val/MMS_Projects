@@ -14,4 +14,6 @@
     <string name="string_mms_lab_1" />
     <string name="height_cm">Height (Cm)</string>
     <string name="count">Count</string>
+    <string name="bmi">BMI</string>
+    <string name="press_count_to_calculate">Press Count to Calculate</string>
 </resources>

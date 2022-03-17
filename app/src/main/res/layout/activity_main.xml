@@ -48,7 +48,27 @@
             android:id="@+id/Count_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="CountClick"
             android:text="@string/count" />
+
+        <TextView
+            android:id="@+id/PressToCalculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/press_count_to_calculate"
+            android:textAlignment="center"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/BMI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/bmi"
+            android:textAlignment="center"
+            android:textSize="60sp"
+            android:textStyle="bold" />
 
     </LinearLayout>
 </LinearLayout>
