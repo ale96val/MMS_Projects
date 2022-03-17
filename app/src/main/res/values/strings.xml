@@ -13,4 +13,5 @@
     <string name="mms_lab_1">MMS: LAB_1</string>
     <string name="string_mms_lab_1" />
     <string name="height_cm">Height (Cm)</string>
+    <string name="count">Count</string>
 </resources>
