@@ -1,6 +1,7 @@
 package com.example.mms_project1;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
@@ -149,6 +150,11 @@ public class MainActivity extends AppCompatActivity {
                 editText1.setHint("Mass (Ls)");
                 editText2.setHint("Height (In)");
                 count.setOnClickListener(this::CountClick2);
+                return true;
+
+            case R.id.AboutUs:
+                Intent intent = new Intent(this, AboutUs.class);
+                startActivity(intent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
