@@ -2,6 +2,7 @@ package com.example.mms_project1;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.text.InputType;
 import android.util.Log;
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d("TAG", "The onRestart() event");
     }
 
+    @SuppressLint("SetTextI18n")
     public void CountClick1(View view) {
         EditText editText1=findViewById(R.id.editTextNumber);
         EditText editText2=findViewById(R.id.editTextNumber2);
@@ -90,10 +92,22 @@ public class MainActivity extends AppCompatActivity {
             float result = (editText1value / (editText2value/100 * editText2value/100));
             TextView BMI = findViewById(R.id.BMI);
             BMI.setText(String.valueOf(result));
+            TextView Status = findViewById(R.id.Status);
+            if (result <= 18.5){
+                Status.setText("Underweight");
+                Status.setTextColor(Color.BLUE);
+            }else if(18.5 < result && result <= 24.9){
+                Status.setText("Normal Weight");
+                Status.setTextColor(Color.GREEN);
+            }else{
+                Status.setText("Overweight");
+                Status.setTextColor(Color.YELLOW);
+            }
         }
 
     }
 
+    @SuppressLint({"ResourceAsColor", "SetTextI18n"})
     public void CountClick2(View view) {
         EditText editText1=findViewById(R.id.editTextNumber);
         EditText editText2=findViewById(R.id.editTextNumber2);
@@ -120,7 +134,18 @@ public class MainActivity extends AppCompatActivity {
         if (editText1value != 0 && editText2value != 0) {
             float result = (editText1value / (editText2value * editText2value)) * 703;
             TextView BMI = findViewById(R.id.BMI);
+            TextView Status = findViewById(R.id.Status);
             BMI.setText(String.valueOf(result));
+            if (result <= 18.5){
+                Status.setText("Underweight");
+                Status.setTextColor(Color.BLUE);
+            }else if(18.5 < result && result <= 24.9){
+                Status.setText("Normal Weight");
+                Status.setTextColor(Color.GREEN);
+            }else{
+                Status.setText("Overweight");
+                Status.setTextColor(Color.YELLOW);
+            }
         }
 
     }

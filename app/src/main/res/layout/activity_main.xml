@@ -77,6 +77,16 @@
             android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/Status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/status"
+            android:textAlignment="center"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/BMI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
