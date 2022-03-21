@@ -7,4 +7,10 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/toKg"
+        android:title="@string/change_to_kg" />
+    <item
+        android:id="@+id/toLs"
+        android:title="@string/change_to_ls" />
 </menu>
