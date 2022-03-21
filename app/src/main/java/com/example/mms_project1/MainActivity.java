@@ -130,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-    @SuppressLint("NonConstantResourceId")
+    @SuppressLint({"NonConstantResourceId", "SetTextI18n"})
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         EditText editText1=findViewById(R.id.editTextNumber);
