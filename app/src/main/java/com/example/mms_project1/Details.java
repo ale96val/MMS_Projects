@@ -1,9 +1,14 @@
 package com.example.mms_project1;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import org.w3c.dom.Text;
 
 public class Details extends AppCompatActivity {
 
@@ -14,6 +19,21 @@ public class Details extends AppCompatActivity {
         Log.d("TAG", "The onCreate() event");
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
+
+        TextView BMI = findViewById(R.id.BMI);
+        TextView Status = findViewById(R.id.Status);
+        Float result = null;
+        BMI.setText(String.valueOf(result));
+            if (result <= 18.5){
+                Status.setText("Underweight");
+                Status.setTextColor(Color.BLUE);
+            }else if(18.5 < result && result <= 24.9){
+                Status.setText("Normal Weight");
+                Status.setTextColor(Color.GREEN);
+            }else{
+                Status.setText("Overweight");
+                Status.setTextColor(Color.YELLOW);
+            }
     }
 
     @Override
@@ -51,6 +71,7 @@ public class Details extends AppCompatActivity {
         super.onRestart();
         Log.d("TAG", "The onRestart() event");
     }
+
 }
 
 

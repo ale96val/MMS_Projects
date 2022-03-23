@@ -23,4 +23,6 @@
     <string name="title_activity_about_us">AboutUs</string>
     <string name="status">Status</string>
     <string name="press_result_to_details">Press result to details</string>
+    <string name="details">details</string>
+    <string name="string_details" />
 </resources>
