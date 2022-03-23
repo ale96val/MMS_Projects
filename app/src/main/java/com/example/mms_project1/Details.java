@@ -71,6 +71,7 @@ public class Details extends AppCompatActivity {
         super.onRestart();
         Log.d("TAG", "The onRestart() event");
     }
+
 }
 
 
