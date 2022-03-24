@@ -27,16 +27,21 @@ public class Details extends AppCompatActivity {
 
         TextView BMI = findViewById(R.id.BMI);
         TextView Status = findViewById(R.id.Status);
+        TextView Details = findViewById(R.id.details);
+        Details.setTextSize(24);
         BMI.setText(String.valueOf(result));
             if (result <= 18.5){
                 Status.setText("Underweight");
                 Status.setTextColor(Color.BLUE);
+                Details.setText("Being underweight could be a sign you're not eating enough or you may be ill. If you're underweight, a GP can help.");
             }else if(18.5 < result && result <= 24.9){
                 Status.setText("Normal Weight");
                 Status.setTextColor(Color.GREEN);
+                Details.setText("Keep up the good work! For tips on maintaining a healthy weight, check out the food and diet and fitness sections.");
             }else{
                 Status.setText("Overweight");
                 Status.setTextColor(Color.YELLOW);
+                Details.setText("The best way to lose weight if you're overweight is through a combination of diet and exercise.");
             }
     }
 
