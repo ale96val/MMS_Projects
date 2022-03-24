@@ -17,12 +17,16 @@ public class Details extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.details);
         Log.d("TAG", "The onCreate() event");
+        Bundle extras = getIntent().getExtras();
+        float result = 0;
+        if (extras != null) {
+            result = Float.parseFloat(extras.getString("key"));
+        }
         Toolbar myToolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(myToolbar);
 
         TextView BMI = findViewById(R.id.BMI);
         TextView Status = findViewById(R.id.Status);
-        Float result = null;
         BMI.setText(String.valueOf(result));
             if (result <= 18.5){
                 Status.setText("Underweight");

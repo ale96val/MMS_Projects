@@ -16,6 +16,11 @@
             android:label="@string/title_activity_about_us"
             android:theme="@style/Theme.MMS_Project1.NoActionBar" />
         <activity
+            android:name=".Details"
+            android:exported="false"
+            android:label="@string/details"
+            android:theme="@style/Theme.MMS_Project1.NoActionBar" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

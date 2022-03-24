@@ -187,7 +187,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void SeeDetails(View view) {
-        Intent intent = new Intent(this, Details.class);
-        startActivity(intent);
+        TextView BMI = findViewById(R.id.BMI);
+        if (!BMI.getText().equals("BMI")) {
+            CharSequence result = BMI.getText();
+            Intent intent = new Intent(this, Details.class);
+            intent.putExtra("key", result.toString());
+            startActivity(intent);
+        }
     }
 }
