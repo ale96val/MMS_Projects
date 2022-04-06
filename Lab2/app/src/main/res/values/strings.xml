@@ -30,4 +30,5 @@
     <string name="string_string_string_string_status" />
     <string name="string_string_string_string_string_status" />
     <string name="add_task">Add Task</string>
+    <string name="taskimage">TaskImage</string>
 </resources>

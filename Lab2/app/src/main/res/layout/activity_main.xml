@@ -15,16 +15,21 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/TaskList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="26dp"
         android:clickable="true"
+        android:contentDescription="@string/addbutton"
+        android:focusable="true"
         android:onClick="addElement"
         app:fabSize="normal"
         app:srcCompat="@android:drawable/ic_menu_add"
-        tools:ignore="SpeakableTextPresentCheck"
-        android:contentDescription="@string/addbutton"
-        android:focusable="true" />
+        tools:ignore="SpeakableTextPresentCheck,ImageContrastCheck" />
 </LinearLayout>
