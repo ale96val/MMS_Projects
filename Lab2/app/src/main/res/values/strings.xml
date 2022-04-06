@@ -10,4 +10,24 @@
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="addbutton">addButton</string>
+    <string name="task_name">Task Name</string>
+    <string name="name">Name</string>
+    <string name="task_type">Task Type</string>
+    <string name="to_do">To Do</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="meet">Meet</string>
+    <string name="task_description">Task Description</string>
+    <string name="due_date">Due Date</string>
+    <string name="select_date">Select Date</string>
+    <string name="dd_mm_yyyy">dd/mm/yyyy</string>
+    <string name="select_date_dd_mm_yyyy">Select date (dd/mm/yyyy)</string>
+    <string name="status">Status</string>
+    <string name="not_done_done">Not Done / Done</string>
+    <string name="string_status" />
+    <string name="string_string_status" />
+    <string name="string_string_string_status" />
+    <string name="string_string_string_string_status" />
+    <string name="string_string_string_string_string_status" />
+    <string name="add_task">Add Task</string>
 </resources>

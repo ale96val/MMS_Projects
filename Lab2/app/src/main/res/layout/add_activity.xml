@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".AddActivity">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar"
         android:layout_width="match_parent"
@@ -15,18 +16,123 @@
         android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
-    <TextView
-        android:id="@+id/textView2"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:layout_height="match_parent"
+        android:layout_margin="26dp"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/IDTODO"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name" />
+        <TextView
+            android:id="@+id/Task_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/task_name" />
+
+        <EditText
+            android:id="@+id/TaskNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/task_name"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@string/name" />
+
+        <TextView
+            android:id="@+id/task_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/task_type" />
+
+        <RadioGroup
+            android:id="@+id/select_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/task_todo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/to_do" />
+
+            <RadioButton
+                android:id="@+id/task_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/email" />
+
+            <RadioButton
+                android:id="@+id/task_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/phone" />
+
+            <RadioButton
+                android:id="@+id/task_meet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/meet" />
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/Task_Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/task_description" />
+
+        <EditText
+            android:id="@+id/task_description_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:text="@string/task_description"
+            tools:ignore="DuplicateSpeakableTextCheck" />
+
+        <TextView
+            android:id="@+id/Due_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/due_date" />
+
+        <EditText
+            android:id="@+id/task_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/dd_mm_yyyy"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:text="@string/select_date_dd_mm_yyyy" />
+
+        <TextView
+            android:id="@+id/Status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/status" />
+
+        <Switch
+            android:id="@+id/Status_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="48dp"
+            android:text="@string/not_done_done"
+            tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+        <Button
+            android:id="@+id/add_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="add_task"
+            android:text="@string/add_task" />
+
+    </LinearLayout>
 
 </LinearLayout>
