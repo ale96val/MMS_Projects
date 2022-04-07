@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,7 +28,7 @@ import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
     //Set to List.
-    List<String> StringSet = new ArrayList<String>();
+    List<String> StringSet = new ArrayList<>();
     ItemAdapter adapter = new ItemAdapter(StringSet) {
     };
 
@@ -39,7 +41,45 @@ public class MainActivity extends AppCompatActivity {
         RecyclerView TaskList = findViewById(R.id.TaskList);
         TaskList.setAdapter(adapter);
         TaskList.setLayoutManager(new LinearLayoutManager(this));
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(TaskList);
+
     }
+
+    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            final int position = viewHolder.getAdapterPosition();
+            switch (direction) {
+                case ItemTouchHelper.LEFT:
+                    StringSet.remove(position);
+                    adapter.notifyItemRemoved(position);
+                    break;
+                case ItemTouchHelper.RIGHT:
+                    String task = StringSet.get(position);
+                    String[] task2 = task.split(",");
+                    for (int i = 0; i < task2.length; i++){
+                        Log.d("TAG",task2[i]);
+                        if(task2[i].equals("true")){
+                            task2[i] = "false";
+                            break;
+                        }
+                        if(task2[i].equals("false")){
+                            task2[i] = "true";
+                        }
+                    }
+                    task = TextUtils.join(",", task2);
+                    StringSet.set(position, task);
+                    adapter.notifyItemRemoved(position);
+                    break;
+        }
+        }
+    };
 
     protected void onResume() {
         super.onResume();
