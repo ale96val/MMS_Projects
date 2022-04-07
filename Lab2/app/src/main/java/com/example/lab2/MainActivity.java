@@ -18,13 +18,15 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
 public class MainActivity extends AppCompatActivity {
     //Set to List.
-    Set<String> StringSet = new HashSet<>();
+    List<String> StringSet = new ArrayList<String>();
     ItemAdapter adapter = new ItemAdapter(StringSet) {
     };
 
@@ -49,13 +51,14 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences sharedPref = getSharedPreferences("Task",Context.MODE_PRIVATE);
         String task = sharedPref.getString("Task", "default");
         if(!task.equals("default")){
-            StringSet.add("'" + task + "'");
+            StringSet.add(task);
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.clear();
             editor.apply();
             SharedPreferences sharedPref2 = getSharedPreferences("Tasks",Context.MODE_PRIVATE);
             SharedPreferences.Editor editor2 = sharedPref2.edit();
-            editor2.putStringSet("Tasks", StringSet);
+            Set set2 = new HashSet(StringSet);
+            editor2.putStringSet ("Tasks", set2);
             Log.d("TAG", StringSet.toString());
             editor2.apply();
             adapter.notifyDataSetChanged();
@@ -63,16 +66,22 @@ public class MainActivity extends AppCompatActivity {
     }
     public abstract static class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder> {
         public static class ViewHolder extends RecyclerView.ViewHolder {
-            public TextView TaskText;
+            public TextView TaskText1;
+            public TextView TaskText2;
+            public TextView TaskText3;
+            public TextView TaskText4;
             public ImageView TaskImage;
             public ViewHolder(View itemView) {
                 super(itemView);
-                TaskText = itemView.findViewById(R.id.TaskText);
+                TaskText1 = itemView.findViewById(R.id.TaskText);
+                TaskText2 = itemView.findViewById(R.id.taskText2);
+                TaskText3 = itemView.findViewById(R.id.taskText3);
+                TaskText4 = itemView.findViewById(R.id.taskText4);
                 TaskImage = itemView.findViewById(R.id.TaskImage);
             }
         }
-        private final Set<String> mTasks;
-        public ItemAdapter(Set<String> Tasks) {
+        private final List<String> mTasks;
+        public ItemAdapter(List<String> Tasks) {
             mTasks = Tasks;
         }
         @NonNull
@@ -86,9 +95,30 @@ public class MainActivity extends AppCompatActivity {
         @SuppressLint("SetTextI18n")
         @Override
         public void onBindViewHolder(ItemAdapter.ViewHolder holder, int position) {
-            String Task = mTasks[position];
-            TextView textView = holder.TaskText;
-            textView.setText("Test");
+            String Task = mTasks.get(position);
+            Log.d("TAG", Task.split(",")[1]);
+            TextView textView1 = holder.TaskText1;
+            TextView textView2 = holder.TaskText2;
+            TextView textView3 = holder.TaskText3;
+            TextView textView4 = holder.TaskText4;
+            ImageView imageView = holder.TaskImage;
+            textView1.setText(Task.split(",")[0]);
+            textView2.setText(Task.split(",")[1]);
+            textView3.setText(Task.split(",")[2]);
+            textView4.setText(Task.split(",")[3]);
+            if(textView3.getText().equals("To Do")){
+                imageView.setImageResource(R.drawable.ic_baseline_assistant_24);
+            }
+            if(textView3.getText().equals("Email")){
+                imageView.setImageResource(R.drawable.ic_baseline_email_24);
+            }
+            if(textView3.getText().equals("Phone")){
+                imageView.setImageResource(R.drawable.ic_baseline_local_phone_24);
+            }
+            if(textView3.getText().equals("Meet")){
+                //imageView.setImageResource(R.drawable.ic_baseline_people_24);
+            }
+
         }
 
         @Override

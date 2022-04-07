@@ -68,7 +68,7 @@ public class AddActivity extends AppCompatActivity {
         String TaskDateText = TaskDate.getText().toString();
         @SuppressLint("UseSwitchCompatOrMaterialCode") Switch Status = findViewById(R.id.Status_text);
         boolean StatusText = Status.isChecked();
-        TaskAdded = NameText + ", " + DescriptionText + ", " + TaskTypeText + ", " + TaskDateText + ", " + StatusText;
+        TaskAdded = NameText + "," + DescriptionText + "," + TaskTypeText + "," + TaskDateText + "," + StatusText;
         SharedPreferences sharedPref = getSharedPreferences("Task", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
         editor.putString("Task", TaskAdded);
