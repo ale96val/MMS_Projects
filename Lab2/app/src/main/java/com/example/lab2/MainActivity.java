@@ -70,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
             public TextView TaskText2;
             public TextView TaskText3;
             public TextView TaskText4;
+            public TextView TaskStatus;
             public ImageView TaskImage;
             public ViewHolder(View itemView) {
                 super(itemView);
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
                 TaskText2 = itemView.findViewById(R.id.taskText2);
                 TaskText3 = itemView.findViewById(R.id.taskText3);
                 TaskText4 = itemView.findViewById(R.id.taskText4);
+                TaskStatus = itemView.findViewById(R.id.taskStatus);
                 TaskImage = itemView.findViewById(R.id.TaskImage);
             }
         }
@@ -101,11 +103,18 @@ public class MainActivity extends AppCompatActivity {
             TextView textView2 = holder.TaskText2;
             TextView textView3 = holder.TaskText3;
             TextView textView4 = holder.TaskText4;
+            TextView taskStatus = holder.TaskStatus;
             ImageView imageView = holder.TaskImage;
             textView1.setText(Task.split(",")[0]);
             textView2.setText(Task.split(",")[1]);
             textView3.setText(Task.split(",")[2]);
             textView4.setText(Task.split(",")[3]);
+            if(Task.split(",")[4].equals("false")){
+                taskStatus.setText("Not done");
+            }else{
+                taskStatus.setText("Done");
+            }
+
             if(textView3.getText().equals("To Do")){
                 imageView.setImageResource(R.drawable.ic_baseline_assistant_24);
             }
@@ -116,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 imageView.setImageResource(R.drawable.ic_baseline_local_phone_24);
             }
             if(textView3.getText().equals("Meet")){
-                //imageView.setImageResource(R.drawable.ic_baseline_people_24);
+                imageView.setImageResource(R.drawable.ic_baseline_local_phone_24);
             }
 
         }
