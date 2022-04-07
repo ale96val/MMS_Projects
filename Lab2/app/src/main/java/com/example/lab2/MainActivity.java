@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                         if(task2[i].equals("false")){
                             task2[i] = "true";
+                            break;
                         }
                     }
                     task = TextUtils.join(",", task2);
