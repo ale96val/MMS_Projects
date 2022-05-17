@@ -2,14 +2,113 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/AboutUs"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     android:orientation="vertical"
     tools:context="com.example.project.MainActivity">
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button" />
+        android:text="@string/events_application"
+        android:textAlignment="center"
+        android:textColor="#4C5352"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="6sp"
+        android:layout_marginBottom="20sp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_events"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2sp"
+            android:layout_weight="1"
+            android:backgroundTint="#4C5352"
+            android:onClick="gotoEvents"
+            android:text="@string/events"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button_places"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2sp"
+            android:layout_weight="1"
+            android:backgroundTint="#4C5352"
+            android:text="@string/places"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="6sp"
+        android:layout_marginBottom="20sp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_accomodation"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2sp"
+            android:layout_weight="1"
+            android:backgroundTint="#4C5352"
+            android:text="@string/accomodation"
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/button_guidedtours"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2sp"
+            android:layout_weight="1"
+            android:backgroundTint="#4C5352"
+            android:text="@string/guided_tours"
+            android:textColor="#FFFFFF"
+            app:iconTint="#FFFFFF" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6sp"
+        android:layout_marginEnd="6sp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/button_switchlanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="@string/switch_to_english_spanish" />
+
+        <TextView
+            android:id="@+id/button_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/about_the_app"
+            android:textAlignment="textEnd" />
+
+    </LinearLayout>
+
 </LinearLayout>

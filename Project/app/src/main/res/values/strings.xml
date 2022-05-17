@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Project</string>
+    <string name="events_application">EVENTS APPLICATION</string>
+    <string name="events">Events</string>
+    <string name="places">Places</string>
+    <string name="accomodation">Accomodation</string>
+    <string name="guided_tours">Guided Tours</string>
+    <string name="switch_to_english_spanish">Switch to English / Spanish</string>
+    <string name="about_the_app">About the App</string>
+    <string name="event_image">Event Image</string>
+    <string name="event_title">Event Title</string>
+    <string name="event_date">Event Date</string>
+    <string name="price">Price</string>
+    <string name="location">Location</string>
 </resources>
