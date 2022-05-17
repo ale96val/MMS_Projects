@@ -80,7 +80,6 @@ public class Events extends AppCompatActivity {
         @Override
         public void onBindViewHolder(ItemAdapter.ViewHolder holder, int position) {
             String Task = mEvents.get(position);
-            Log.d("TAG", Task.split(",")[1]);
             TextView EventTitle = holder.EventTitle;
             TextView EventDate = holder.EventDate;
             TextView EventLocation = holder.EventLocation;
@@ -92,6 +91,10 @@ public class Events extends AppCompatActivity {
             EventPrice.setText(Task.split(",")[3]);
             if(EventTitle.getText().equals("Theater in English")){
                 EventImage.setImageResource(R.drawable.theater_icon);
+            }else if(EventTitle.getText().equals("Trip to Warszawa")){
+                EventImage.setImageResource(R.drawable.trip_icon);
+            }else{
+                EventImage.setImageResource(R.drawable.ic_launcher_background);
             }
         }
 

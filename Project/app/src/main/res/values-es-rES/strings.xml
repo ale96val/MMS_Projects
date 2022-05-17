@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Proyecto</string>
+    <string name="events_application">APLICACIÓN DE EVENTOS</string>
+    <string name="events">Eventos</string>
+    <string name="places">Lugares</string>
+    <string name="accomodation">Hoteles</string>
+    <string name="guided_tours">Tours Guiados</string>
+    <string name="switch_to_english_spanish">Cambiar a Inglés / Español</string>
+    <string name="about_the_app">Sobre la App</string>
+    <string name="event_image">Imagen del Evento</string>
+    <string name="event_title">Título del Evento</string>
+    <string name="event_date">Fecha del Evento</string>
+    <string name="price">Precio</string>
+    <string name="location">Localización</string>
+</resources>
