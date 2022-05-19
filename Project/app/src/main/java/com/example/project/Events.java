@@ -26,7 +26,7 @@ public class Events extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.events);
-        RecyclerView eventList = findViewById(R.id.placesList);
+        RecyclerView eventList = findViewById(R.id.accommodationList);
         eventList.setAdapter(adapter);
         eventList.setLayoutManager(new LinearLayoutManager(this));
         StringSet.add("Theater in English,20/10/2020,Opera of Wroclaw,20zl");
@@ -54,11 +54,11 @@ public class Events extends AppCompatActivity {
             public ImageView EventImage;
             public ViewHolder(View itemView) {
                 super(itemView);
-                EventTitle = itemView.findViewById(R.id.placeTitle);
+                EventTitle = itemView.findViewById(R.id.accommodationTitle);
                 EventDate = itemView.findViewById(R.id.eventDate);
-                EventLocation = itemView.findViewById(R.id.placeLocation);
-                EventPrice= itemView.findViewById(R.id.placePrice);
-                EventImage = itemView.findViewById(R.id.placeImage);
+                EventLocation = itemView.findViewById(R.id.accommodationLocation);
+                EventPrice= itemView.findViewById(R.id.accommodationPrice);
+                EventImage = itemView.findViewById(R.id.accommodationImage);
             }
         }
         private final List<String> mEvents;

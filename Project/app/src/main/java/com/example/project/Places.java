@@ -28,14 +28,14 @@ public class Places extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.places);
-        RecyclerView eventList = findViewById(R.id.placesList);
+        RecyclerView eventList = findViewById(R.id.accommodationList);
         eventList.setAdapter(adapter);
         eventList.setLayoutManager(new LinearLayoutManager(this));
-        StringSet.add("Hotel Warszawa,9/10,Ul. Swidnicka (Wroclaw),100zl/night");
-        StringSet.add("Appartament City Centre,10/10,Rynek (Wroclaw),200zl/night");
-        StringSet.add("Hostel Studenkie,6/10,Ul. Tramwajowa (Wroclaw),20zl/night");
-        StringSet.add("Hostel EuroStars,9/10,Ul. Poznanska (Wroclaw),100zl/night");
-        StringSet.add("Hostel Lux,10/10,Arkady Capitol (Wroclaw),200zl/night");
+        StringSet.add("Rynek Square,9/10,Ul. Rynek (Wroclaw),free");
+        StringSet.add("Zoo,10/10,Ul. Tramwajowa,60zl");
+        StringSet.add("Wroclaw Urzad Mieski,6/10,Ul. Arkady Capitol (Wroclaw),free");
+        StringSet.add("Wyspa Slodowa,9/10,Plac Bema (Wroclaw),free");
+        StringSet.add("Main Train Station,10/10, Wroclaw Glowny (Wroclaw),free");
     }
 
     protected void onResume() {
@@ -58,11 +58,11 @@ public class Places extends AppCompatActivity {
             public ImageView PlaceImage;
             public ViewHolder(View itemView) {
                 super(itemView);
-                PlaceTitle = itemView.findViewById(R.id.placeTitle);
-                PlaceRate = itemView.findViewById(R.id.placeRate);
-                PlaceLocation = itemView.findViewById(R.id.placeLocation);
-                PlacePrice= itemView.findViewById(R.id.placePrice);
-                PlaceImage = itemView.findViewById(R.id.placeImage);
+                PlaceTitle = itemView.findViewById(R.id.accommodationTitle);
+                PlaceRate = itemView.findViewById(R.id.accommodationRate);
+                PlaceLocation = itemView.findViewById(R.id.accommodationLocation);
+                PlacePrice= itemView.findViewById(R.id.accommodationPrice);
+                PlaceImage = itemView.findViewById(R.id.accommodationImage);
             }
         }
         private final List<String> mPlaces;
@@ -90,13 +90,13 @@ public class Places extends AppCompatActivity {
             PlaceRate.setText(Task.split(",")[1]);
             PlaceLocation.setText(Task.split(",")[2]);
             PlacePrice.setText(Task.split(",")[3]);
-            if(PlaceTitle.getText().equals("Hotel Warszawa")){
+            if(PlaceTitle.getText().equals("Rynek Square")){
                 PlaceImage.setImageResource(R.drawable.skyscrapper_foreground);
-            }else if(PlaceTitle.getText().equals("Appartament City Centre")){
+            }else if(PlaceTitle.getText().equals("Zoo")){
                 PlaceImage.setImageResource(R.drawable.house_foreground);
-            }else if(PlaceTitle.getText().equals("Hostel Studenkie")){
+            }else if(PlaceTitle.getText().equals("Wroclaw Urzad Mieski")){
                 PlaceImage.setImageResource(R.drawable.studenthouse_foreground);
-            }else if(PlaceTitle.getText().equals("Hostel EuroStars")){
+            }else if(PlaceTitle.getText().equals("Wyspa Slodowa")){
                 PlaceImage.setImageResource(R.drawable.ic_launcher_background);
             }else{
                 PlaceImage.setImageResource(R.drawable.ic_launcher_background);

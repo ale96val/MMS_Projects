@@ -59,6 +59,11 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void gotoAccommodations(View view) {
+        Intent intent = new Intent(this, Accommodations.class);
+        startActivity(intent);
+    }
+
     public void switchLanguage(View view) {
         Locale myLocale;
         Locale current = getResources().getConfiguration().locale;

@@ -14,4 +14,6 @@
     <string name="location">Location</string>
     <string name="placeTitle">Place Title</string>
     <string name="placeRate">Place Rate</string>
+    <string name="accommodationTitle">Accommodation Title</string>
+    <string name="accommodationRate">Accommodation Rate</string>
 </resources>

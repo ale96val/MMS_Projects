@@ -36,13 +36,13 @@
                 android:id="@+id/accommodationTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/event_title" />
+                android:text="@string/accommodationTitle" />
 
             <TextView
-                android:id="@+id/eventDate"
+                android:id="@+id/accommodationRate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/event_date" />
+                android:text="@string/accommodationRate" />
 
             <TextView
                 android:id="@+id/accommodationLocation"
