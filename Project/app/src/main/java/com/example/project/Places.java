@@ -62,7 +62,7 @@ public class Places extends AppCompatActivity {
                 PlaceRate = itemView.findViewById(R.id.accommodationRate);
                 PlaceLocation = itemView.findViewById(R.id.accommodationLocation);
                 PlacePrice= itemView.findViewById(R.id.accommodationPrice);
-                PlaceImage = itemView.findViewById(R.id.accommodationImage);
+                PlaceImage = itemView.findViewById(R.id.eventDetailImage1);
             }
         }
         private final List<String> mPlaces;

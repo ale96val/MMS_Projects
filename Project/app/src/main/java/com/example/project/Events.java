@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
@@ -32,7 +34,31 @@ public class Events extends AppCompatActivity {
         StringSet.add("Theater in English,20/10/2020,Opera of Wroclaw,20zl");
         StringSet.add("Trip to Warszawa,10/10/2020,Wroclaw Main Station,200zl,");
         StringSet.add("SkyTower Visit,12/10/2020,SKyTower of Wroclaw,6zl,");
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(eventList);
     }
+
+    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            final int position = viewHolder.getAdapterPosition();
+            switch (direction) {
+                case ItemTouchHelper.LEFT:
+                    StringSet.remove(position);
+                    adapter.notifyItemRemoved(position);
+                    break;
+                case ItemTouchHelper.RIGHT:
+                    Intent intent = new Intent(Events.this, EventsDetails.class);
+                    startActivity(intent);
+                    break;
+            }
+        }
+    };
+
 
     protected void onResume() {
         super.onResume();
@@ -58,7 +84,7 @@ public class Events extends AppCompatActivity {
                 EventDate = itemView.findViewById(R.id.eventDate);
                 EventLocation = itemView.findViewById(R.id.accommodationLocation);
                 EventPrice= itemView.findViewById(R.id.accommodationPrice);
-                EventImage = itemView.findViewById(R.id.accommodationImage);
+                EventImage = itemView.findViewById(R.id.eventDetailImage1);
             }
         }
         private final List<String> mEvents;

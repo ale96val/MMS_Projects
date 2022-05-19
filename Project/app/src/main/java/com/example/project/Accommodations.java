@@ -62,7 +62,7 @@ public class Accommodations extends AppCompatActivity {
                 AccommodationRate = itemView.findViewById(R.id.accommodationRate);
                 AccommodationLocation = itemView.findViewById(R.id.accommodationLocation);
                 AccommodationPrice= itemView.findViewById(R.id.accommodationPrice);
-                AccommodationImage = itemView.findViewById(R.id.accommodationImage);
+                AccommodationImage = itemView.findViewById(R.id.eventDetailImage1);
             }
         }
         private final List<String> mAccommodations;

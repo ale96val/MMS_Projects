@@ -16,4 +16,5 @@
     <string name="placeRate">Place Rate</string>
     <string name="accommodationTitle">Accommodation Title</string>
     <string name="accommodationRate">Accommodation Rate</string>
+    <string name="eventDescription">Event Description</string>
 </resources>
