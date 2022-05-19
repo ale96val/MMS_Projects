@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class EventsDetails extends AppCompatActivity {
 
     @SuppressLint("SetJavaScriptEnabled")
+
     private String eventRecieved;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
