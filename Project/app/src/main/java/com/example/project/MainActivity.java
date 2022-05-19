@@ -1,13 +1,12 @@
 package com.example.project;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
@@ -55,8 +54,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void gotoPlaces(View view) {
+        Intent intent = new Intent(this, Places.class);
+        startActivity(intent);
+    }
+
     public void switchLanguage(View view) {
-        Locale myLocale = null;
+        Locale myLocale;
         Locale current = getResources().getConfiguration().locale;
         if(current.toString().equals("en_US") || current.toString().equals("en_us")){
             myLocale = new Locale("es");

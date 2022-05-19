@@ -13,4 +13,6 @@
     <string name="event_date">Fecha del Evento</string>
     <string name="price">Precio</string>
     <string name="location">Localización</string>
+    <string name="placeTitle">Nombre del sitio</string>
+    <string name="placeRate">Calificación del sitio</string>
 </resources>

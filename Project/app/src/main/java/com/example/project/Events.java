@@ -26,7 +26,7 @@ public class Events extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.events);
-        RecyclerView eventList = findViewById(R.id.eventsList);
+        RecyclerView eventList = findViewById(R.id.placesList);
         eventList.setAdapter(adapter);
         eventList.setLayoutManager(new LinearLayoutManager(this));
         StringSet.add("Theater in English,20/10/2020,Opera of Wroclaw,20zl");
@@ -54,11 +54,11 @@ public class Events extends AppCompatActivity {
             public ImageView EventImage;
             public ViewHolder(View itemView) {
                 super(itemView);
-                EventTitle = itemView.findViewById(R.id.eventTitle);
+                EventTitle = itemView.findViewById(R.id.placeTitle);
                 EventDate = itemView.findViewById(R.id.eventDate);
-                EventLocation = itemView.findViewById(R.id.eventLocation);
-                EventPrice= itemView.findViewById(R.id.eventPrice);
-                EventImage = itemView.findViewById(R.id.eventImage);
+                EventLocation = itemView.findViewById(R.id.placeLocation);
+                EventPrice= itemView.findViewById(R.id.placePrice);
+                EventImage = itemView.findViewById(R.id.placeImage);
             }
         }
         private final List<String> mEvents;
@@ -70,7 +70,7 @@ public class Events extends AppCompatActivity {
         public ItemAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             Context context = parent.getContext();
             LayoutInflater inflater = LayoutInflater.from(context);
-            View ItemView = inflater.inflate(R.layout.item_layout, parent, false);
+            View ItemView = inflater.inflate(R.layout.item_layout_events, parent, false);
             return new ViewHolder(ItemView);
         }
         @SuppressLint("SetTextI18n")
@@ -91,7 +91,7 @@ public class Events extends AppCompatActivity {
             }else if(EventTitle.getText().equals("Trip to Warszawa")){
                 EventImage.setImageResource(R.drawable.trip_icon);
             }else{
-                EventImage.setImageResource(R.drawable.ic_launcher_background);
+                EventImage.setImageResource(R.drawable.skyscrapper_foreground);
             }
         }
 

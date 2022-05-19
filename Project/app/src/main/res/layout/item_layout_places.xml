@@ -19,7 +19,7 @@
         app:layout_constraintVertical_bias="0.0">
 
         <ImageView
-            android:id="@+id/eventImage"
+            android:id="@+id/placeImage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -33,25 +33,25 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/eventTitle"
+                android:id="@+id/placeTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/event_title" />
+                android:text="@string/placeTitle" />
 
             <TextView
-                android:id="@+id/eventDate"
+                android:id="@+id/placeRate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/event_date" />
+                android:text="@string/placeRate" />
 
             <TextView
-                android:id="@+id/eventLocation"
+                android:id="@+id/placeLocation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/location" />
 
             <TextView
-                android:id="@+id/eventPrice"
+                android:id="@+id/placePrice"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/price" />

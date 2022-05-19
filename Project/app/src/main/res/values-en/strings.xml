@@ -13,4 +13,6 @@
     <string name="event_date">Event Date</string>
     <string name="price">Price</string>
     <string name="location">Location</string>
+    <string name="placeTitle">Place Title</string>
+    <string name="placeRate">Place Rate</string>
 </resources>
