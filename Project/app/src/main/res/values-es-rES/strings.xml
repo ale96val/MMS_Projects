@@ -15,4 +15,10 @@
     <string name="location">Localización</string>
     <string name="placeTitle">Nombre del sitio</string>
     <string name="placeRate">Calificación del sitio</string>
+    <string name="accommodationTitle">Nombre del alojamiento</string>
+    <string name="accommodationRate">Evaluación del alojamiento</string>
+    <string name="eventDescription">Descripción del evento</string>
+    <string name="images">Imágenes</string>
+    <string name="video">Vídeo</string>
+    <string name="placeDescription">Descripción del sitio</string>
 </resources>

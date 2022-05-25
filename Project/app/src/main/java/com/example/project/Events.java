@@ -53,6 +53,7 @@ public class Events extends AppCompatActivity {
                     break;
                 case ItemTouchHelper.RIGHT:
                     Intent intent = new Intent(Events.this, EventsDetails.class);
+                    intent.putExtra("Event",StringSet.get(position));
                     startActivity(intent);
                     break;
             }

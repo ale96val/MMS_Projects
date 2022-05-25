@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,12 +33,35 @@ public class Places extends AppCompatActivity {
         RecyclerView eventList = findViewById(R.id.accommodationList);
         eventList.setAdapter(adapter);
         eventList.setLayoutManager(new LinearLayoutManager(this));
-        StringSet.add("Rynek Square,9/10,Ul. Rynek (Wroclaw),free");
-        StringSet.add("Zoo,10/10,Ul. Tramwajowa,60zl");
-        StringSet.add("Wroclaw Urzad Mieski,6/10,Ul. Arkady Capitol (Wroclaw),free");
-        StringSet.add("Wyspa Slodowa,9/10,Plac Bema (Wroclaw),free");
-        StringSet.add("Main Train Station,10/10, Wroclaw Glowny (Wroclaw),free");
+        StringSet.add("Rynek Square,9,Ul. Rynek (Wroclaw),free");
+        StringSet.add("Zoo,10,Ul. Tramwajowa,60zl");
+        StringSet.add("Wroclaw Urzad Mieski,6,Ul. Arkady Capitol (Wroclaw),free");
+        StringSet.add("Wyspa Slodowa,9,Plac Bema (Wroclaw),free");
+        StringSet.add("Main Train Station,10, Wroclaw Glowny (Wroclaw),free");
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(eventList);
     }
+    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            final int position = viewHolder.getAdapterPosition();
+            switch (direction) {
+                case ItemTouchHelper.LEFT:
+                    StringSet.remove(position);
+                    adapter.notifyItemRemoved(position);
+                    break;
+                case ItemTouchHelper.RIGHT:
+                    Intent intent = new Intent(Places.this, PlacesDetails.class);
+                    intent.putExtra("Place",StringSet.get(position));
+                    startActivity(intent);
+                    break;
+            }
+        }
+    };
 
     protected void onResume() {
         super.onResume();

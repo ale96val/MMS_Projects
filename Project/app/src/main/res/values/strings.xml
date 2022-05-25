@@ -17,4 +17,7 @@
     <string name="accommodationTitle">Accommodation Title</string>
     <string name="accommodationRate">Accommodation Rate</string>
     <string name="eventDescription">Event Description</string>
+    <string name="images">Images</string>
+    <string name="video">Video</string>
+    <string name="placeDescription">Accommodation Descrition</string>
 </resources>

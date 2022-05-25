@@ -15,4 +15,10 @@
     <string name="location">Location</string>
     <string name="placeTitle">Place Title</string>
     <string name="placeRate">Place Rate</string>
+    <string name="accommodationTitle">Accommodation Title</string>
+    <string name="accommodationRate">Accommodation Rate</string>
+    <string name="eventDescription">Event Description</string>
+    <string name="images">Images</string>
+    <string name="video">Video</string>
+    <string name="placeDescription">Place Description</string>
 </resources>
