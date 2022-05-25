@@ -2,6 +2,9 @@ package com.example.project;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
+import android.util.Log;
+import android.view.View;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -11,12 +14,16 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.Locale;
+
 
 public class PlacesDetails extends AppCompatActivity {
 
     @SuppressLint("SetJavaScriptEnabled")
 
     private String placeRecieved;
+    private TextToSpeech readtext;
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,7 +47,7 @@ public class PlacesDetails extends AppCompatActivity {
                 return super.shouldOverrideUrlLoading(view, request);
             }
         });
-        String frameVideo = "<html><body>Youtube video .. <br> <iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/xzIMSKN7a2c\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
+        String frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/xzIMSKN7a2c?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
         webView.loadData(frameVideo, "text/html", "utf-8");
         if(placeRecieved.contains("Rynek")) {
             title.setText(placeRecieved.split(",")[0]);
@@ -84,6 +91,24 @@ public class PlacesDetails extends AppCompatActivity {
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
         }
     }
+    private void speak(String text){
+        readtext.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
+    }
+
+    public void setReadtext(View view){
+        readtext = new TextToSpeech(this, status -> {
+            if (status == TextToSpeech.SUCCESS) {
+                int result = readtext.setLanguage(Locale.US);
+                if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                    Log.e("TTS", "This Language is not supported");
+                }
+                speak(placeRecieved);
+
+            } else {
+                Log.e("TTS", "Initilization Failed!");
+            }
+        });
+    }
 
     protected void onResume() {
         super.onResume();
@@ -110,6 +135,10 @@ public class PlacesDetails extends AppCompatActivity {
     }
 
     protected void onDestroy() {
+        if (readtext != null) {
+            readtext.stop();
+            readtext.shutdown();
+        }
         super.onDestroy();
 
     }

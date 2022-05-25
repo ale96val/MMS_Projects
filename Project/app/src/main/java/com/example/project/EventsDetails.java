@@ -13,8 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class EventsDetails extends AppCompatActivity {
 
     @SuppressLint("SetJavaScriptEnabled")
-
-    private String eventRecieved;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +27,7 @@ public class EventsDetails extends AppCompatActivity {
         ImageView img1 = findViewById(R.id.eventDetailImage1);
         ImageView img2 = findViewById(R.id.eventDetailImage2);
         ImageView img3 = findViewById(R.id.eventDetailImage3);
-        eventRecieved = extras.getString("Event");
+        String eventRecieved = extras.getString("Event");
         if(eventRecieved.contains("Opera")) {
             title.setText(eventRecieved.split(",")[0]);
             description.setText(eventRecieved);
