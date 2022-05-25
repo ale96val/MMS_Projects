@@ -21,7 +21,7 @@
         android:id="@+id/accommodationDescriptionTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/eventDescription"
+        android:text="@string/accommodationDescription"
         android:textAlignment="viewStart" />
 
     <TextView
@@ -31,6 +31,16 @@
         android:layout_marginBottom="6sp"
         android:text="@string/eventDescription"
         android:textAlignment="viewStart" />
+
+    <RatingBar
+        android:id="@+id/accommodationEvaluation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/accommodationRate"
+        android:max="10"
+        android:numStars="10"
+        android:stepSize="1" />
+
 
     <WebView
         android:id="@+id/mapview"

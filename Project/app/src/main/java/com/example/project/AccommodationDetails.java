@@ -2,10 +2,6 @@ package com.example.project;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
-import android.util.Log;
-import android.view.View;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
@@ -14,20 +10,21 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Locale;
 
-
-public class PlacesDetails extends AppCompatActivity {
+public class AccommodationDetails extends AppCompatActivity {
 
     @SuppressLint("SetJavaScriptEnabled")
 
     private String placeRecieved;
-    private TextToSpeech readtext;
+
+    public AccommodationDetails() {
+    }
+
     @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.placesdetails);
+        setContentView(R.layout.accommodationdetails);
         WebView myWebView;
         myWebView = (WebView) findViewById(R.id.mapview);
         myWebView.getSettings().setJavaScriptEnabled(true);
@@ -39,44 +36,35 @@ public class PlacesDetails extends AppCompatActivity {
         ImageView img2 = findViewById(R.id.eventDetailImage2);
         ImageView img3 = findViewById(R.id.eventDetailImage3);
         RatingBar evaluation = findViewById(R.id.accommodationEvaluation);
-        placeRecieved = extras.getString("Place");
-        WebView webView=findViewById(R.id.videoView);
-        webView.getSettings().setJavaScriptEnabled(true);
-        webView.setWebViewClient(new WebViewClient(){
-            public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-                return super.shouldOverrideUrlLoading(view, request);
-            }
-        });
-        String frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/xzIMSKN7a2c?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
-        webView.loadData(frameVideo, "text/html", "utf-8");
-        if(placeRecieved.contains("Rynek")) {
+        placeRecieved = extras.getString("Accommodation");
+        if(placeRecieved.contains("Warszawa")) {
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
-            myWebView.loadUrl("https://goo.gl/maps/aMvbGpsZSHLGhEEC9");
+            myWebView.loadUrl("https://goo.gl/maps/wbPy5dntVcn23YCw8");
             img1.setImageResource(R.drawable.theater_icon);
             img2.setImageResource(R.drawable.theater_icon);
             img3.setImageResource(R.drawable.theater_icon);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
-        }else if(placeRecieved.contains("Zoo")) {
+        }else if(placeRecieved.contains("Appartament")) {
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
-            myWebView.loadUrl("https://goo.gl/maps/VTLV2CNcGzndg3bQ6");
+            myWebView.loadUrl("https://goo.gl/maps/eQTm28vYtQhxYfgJ6");
             img1.setImageResource(R.drawable.trip_icon);
             img2.setImageResource(R.drawable.trip_icon);
             img3.setImageResource(R.drawable.trip_icon);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
-        }else if(placeRecieved.contains("Wroclaw")){
+        }else if(placeRecieved.contains("Studenkie")){
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
-            myWebView.loadUrl("https://goo.gl/maps/Qe14drqFZfsS4HPt9");
+            myWebView.loadUrl("https://goo.gl/maps/Aiq9q3Kxyw8Z8Zjn8");
             img1.setImageResource(R.drawable.skyscrapper_foreground);
             img2.setImageResource(R.drawable.skyscrapper_foreground);
             img3.setImageResource(R.drawable.skyscrapper_foreground);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
-        }else if(placeRecieved.contains("Slodowa")){
+        }else if(placeRecieved.contains("EuroStars")){
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
-            myWebView.loadUrl("https://g.page/slodowa?share");
+            myWebView.loadUrl("https://goo.gl/maps/wJaLLLkheEQFroSX7");
             img1.setImageResource(R.drawable.skyscrapper_foreground);
             img2.setImageResource(R.drawable.skyscrapper_foreground);
             img3.setImageResource(R.drawable.skyscrapper_foreground);
@@ -84,31 +72,14 @@ public class PlacesDetails extends AppCompatActivity {
         }else{
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
-            myWebView.loadUrl("https://goo.gl/maps/PteUbDEWyxy8xKgCA");
+            myWebView.loadUrl("https://goo.gl/maps/WzaiqiTZSfXVHWok6");
             img1.setImageResource(R.drawable.skyscrapper_foreground);
             img2.setImageResource(R.drawable.skyscrapper_foreground);
             img3.setImageResource(R.drawable.skyscrapper_foreground);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
         }
     }
-    private void speak(String text){
-        readtext.speak(text, TextToSpeech.QUEUE_FLUSH, null, null);
-    }
 
-    public void setReadtext(View view){
-        readtext = new TextToSpeech(this, status -> {
-            if (status == TextToSpeech.SUCCESS) {
-                int result = readtext.setLanguage(Locale.US);
-                if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
-                    Log.e("TTS", "This Language is not supported");
-                }
-                speak(placeRecieved);
-
-            } else {
-                Log.e("TTS", "Initilization Failed!");
-            }
-        });
-    }
 
     protected void onResume() {
         super.onResume();
@@ -135,10 +106,6 @@ public class PlacesDetails extends AppCompatActivity {
     }
 
     protected void onDestroy() {
-        if (readtext != null) {
-            readtext.stop();
-            readtext.shutdown();
-        }
         super.onDestroy();
 
     }

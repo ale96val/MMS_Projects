@@ -2,6 +2,7 @@ package com.example.project;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -31,12 +33,36 @@ public class Accommodations extends AppCompatActivity {
         RecyclerView eventList = findViewById(R.id.accommodationList);
         eventList.setAdapter(adapter);
         eventList.setLayoutManager(new LinearLayoutManager(this));
-        StringSet.add("Hotel Warszawa,9/10,Ul. Swidnicka (Wroclaw),100zl/night");
-        StringSet.add("Appartament City Centre,10/10,Rynek (Wroclaw),200zl/night");
-        StringSet.add("Hostel Studenkie,6/10,Ul. Tramwajowa (Wroclaw),20zl/night");
-        StringSet.add("Hostel EuroStars,9/10,Ul. Poznanska (Wroclaw),100zl/night");
-        StringSet.add("Hostel Lux,10/10,Arkady Capitol (Wroclaw),200zl/night");
+        StringSet.add("Hotel Warszawa,9,Ul. Swidnicka (Wroclaw),100zl/night");
+        StringSet.add("Appartament City Centre,10,Rynek (Wroclaw),200zl/night");
+        StringSet.add("Hostel Studenkie,6,Ul. Tramwajowa (Wroclaw),20zl/night");
+        StringSet.add("Hostel EuroStars,9,Ul. Poznanska (Wroclaw),100zl/night");
+        StringSet.add("Hostel Lux,10,Arkady Capitol (Wroclaw),200zl/night");
+        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
+        itemTouchHelper.attachToRecyclerView(eventList);
     }
+
+    ItemTouchHelper.SimpleCallback simpleCallback = new ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+            final int position = viewHolder.getAdapterPosition();
+            switch (direction) {
+                case ItemTouchHelper.LEFT:
+                    StringSet.remove(position);
+                    adapter.notifyItemRemoved(position);
+                    break;
+                case ItemTouchHelper.RIGHT:
+                    Intent intent = new Intent(Accommodations.this, AccommodationDetails.class);
+                    intent.putExtra("Accommodation",StringSet.get(position));
+                    startActivity(intent);
+                    break;
+            }
+        }
+    };
 
     protected void onResume() {
         super.onResume();

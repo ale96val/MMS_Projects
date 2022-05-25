@@ -22,8 +22,8 @@ public class EventsDetails extends AppCompatActivity {
         myWebView.getSettings().setJavaScriptEnabled(true);
         myWebView.setWebViewClient(new WebViewClient());
         Bundle extras = getIntent().getExtras();
-        TextView title = findViewById(R.id.placeTitle);
-        TextView description = findViewById(R.id.placeDescription);
+        TextView title = findViewById(R.id.accommodationTitle2);
+        TextView description = findViewById(R.id.accommodaitonDescription);
         ImageView img1 = findViewById(R.id.eventDetailImage1);
         ImageView img2 = findViewById(R.id.eventDetailImage2);
         ImageView img3 = findViewById(R.id.eventDetailImage3);

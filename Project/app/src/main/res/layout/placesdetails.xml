@@ -17,7 +17,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/placeTitle"
+                android:id="@+id/accommodationTitle2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="6sp"
@@ -28,7 +28,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/placeDescriptionTitle"
+                android:id="@+id/accommodationDescriptionTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/placeDescription"
@@ -40,7 +40,7 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/placeDescription"
+                    android:id="@+id/accommodaitonDescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="6sp"
@@ -58,7 +58,7 @@
             </LinearLayout>
 
             <RatingBar
-                android:id="@+id/PlaceEvaluation"
+                android:id="@+id/accommodationEvaluation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/accommodationRate"
