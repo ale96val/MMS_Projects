@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class Events extends AppCompatActivity {
@@ -31,9 +32,17 @@ public class Events extends AppCompatActivity {
         RecyclerView eventList = findViewById(R.id.accommodationList);
         eventList.setAdapter(adapter);
         eventList.setLayoutManager(new LinearLayoutManager(this));
-        StringSet.add("Theater in English,20/10/2020,Opera of Wroclaw,20zl");
-        StringSet.add("Trip to Warszawa,10/10/2020,Wroclaw Main Station,200zl,");
-        StringSet.add("SkyTower Visit,12/10/2020,SKyTower of Wroclaw,6zl,");
+        Locale current = getResources().getConfiguration().locale;
+        if(current.toString().equals("en_US") || current.toString().equals("en_us")) {
+            StringSet.add("Theater in English,20/10/2020,Opera of Wroclaw,20zl");
+            StringSet.add("Trip to Warszawa,10/10/2020,Wroclaw Main Station,200zl,");
+            StringSet.add("SkyTower Visit,12/10/2020,SKyTower of Wroclaw,6zl,");
+        }
+        else{
+            StringSet.add("Teatro en Inglés, 20/10/2020, Opera de Wroclaw, 20zl");
+            StringSet.add("Viaje a Varsovia, 10/10/2020, Estación de Wroclaw, 200zl");
+            StringSet.add("Visita a la SkyTower, 12/10/2020, SkyTower de Wroclaw, 6zl");
+        }
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(eventList);
     }
@@ -113,12 +122,12 @@ public class Events extends AppCompatActivity {
             EventDate.setText(Task.split(",")[1]);
             EventLocation.setText(Task.split(",")[2]);
             EventPrice.setText(Task.split(",")[3]);
-            if(EventTitle.getText().equals("Theater in English")){
+            if(EventTitle.getText().equals("Theater in English") || EventTitle.getText().equals("Teatro en Inglés")){
                 EventImage.setImageResource(R.drawable.theater_icon);
-            }else if(EventTitle.getText().equals("Trip to Warszawa")){
+            }else if(EventTitle.getText().equals("Trip to Warszawa") || EventTitle.getText().equals("Viaje a Varsovia")){
                 EventImage.setImageResource(R.drawable.trip_icon);
             }else{
-                EventImage.setImageResource(R.drawable.skyscrapper_foreground);
+                EventImage.setImageResource(R.drawable.ic_baseline_wb_cloudy_24);
             }
         }
 

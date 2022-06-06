@@ -33,22 +33,22 @@ public class EventsDetails extends AppCompatActivity {
             description.setText(eventRecieved);
             myWebView.loadUrl("https://goo.gl/maps/tJDpd43LZeqDGUDw6");
             img1.setImageResource(R.drawable.theater_icon);
-            img2.setImageResource(R.drawable.theater_icon);
-            img3.setImageResource(R.drawable.theater_icon);
+            img2.setImageResource(R.drawable.studenthouse_foreground);
+            img3.setImageResource(R.drawable.skyscrapper_foreground);
         }else if(eventRecieved.contains("Warszawa")) {
             title.setText(eventRecieved.split(",")[0]);
             description.setText(eventRecieved);
             myWebView.loadUrl("https://goo.gl/maps/PteUbDEWyxy8xKgCA");
             img1.setImageResource(R.drawable.trip_icon);
-            img2.setImageResource(R.drawable.trip_icon);
-            img3.setImageResource(R.drawable.trip_icon);
+            img2.setImageResource(R.drawable.skyscrapper_foreground);
+            img3.setImageResource(R.drawable.studenthouse_foreground);
         }else{
             title.setText(eventRecieved.split(",")[0]);
             description.setText(eventRecieved);
             myWebView.loadUrl("https://goo.gl/maps/GE2DFBBVhxx3RWLP8");
             img1.setImageResource(R.drawable.skyscrapper_foreground);
-            img2.setImageResource(R.drawable.skyscrapper_foreground);
-            img3.setImageResource(R.drawable.skyscrapper_foreground);
+            img2.setImageResource(R.drawable.ic_baseline_wb_cloudy_24);
+            img3.setImageResource(R.drawable.studenthouse_foreground);
         }
     }
 

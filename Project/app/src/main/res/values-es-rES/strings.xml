@@ -22,4 +22,5 @@
     <string name="video">Vídeo</string>
     <string name="placeDescription">Descripción del sitio</string>
     <string name="readtext">Leer texto</string>
+    <string name="accommodationDescription">Descripción del alojamiento</string>
 </resources>

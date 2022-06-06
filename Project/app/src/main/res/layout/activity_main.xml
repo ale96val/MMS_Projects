@@ -90,11 +90,77 @@
 
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginStart="6sp"
+        android:layout_marginTop="20sp"
+        android:layout_marginEnd="6sp"
+        android:layout_marginBottom="20sp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/Progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:progress="64"
+            android:progressTint="#4C5352"
+            android:visibility="visible"
+            app:indicatorColor="#4C5352"
+            app:indicatorInset="0dp"
+            app:indicatorSize="100dp"
+            tools:layout_conversion_absoluteHeight="100dp"
+            tools:layout_conversion_absoluteWidth="100dp"
+            tools:layout_editor_absoluteX="155dp"
+            tools:layout_editor_absoluteY="331dp"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignWithParentIfMissing="false"
+            android:layout_alignStart="@+id/Progress"
+            android:layout_alignTop="@id/Progress"
+            android:layout_alignEnd="@+id/Progress"
+            android:layout_alignBottom="@id/Progress"
+            android:gravity="center_vertical"
+            android:text="@string/percentage"
+            android:textAlignment="center"
+            android:textColor="#4C5352"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            tools:ignore="RtlCompat"
+            tools:layout_conversion_absoluteHeight="19dp"
+            tools:layout_conversion_absoluteWidth="399dp"
+            tools:layout_editor_absoluteX="6dp"
+            tools:layout_editor_absoluteY="431dp" />
+
+        <TextView
+            android:id="@+id/percentageText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Progress"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:onClick="switchLanguage"
+            android:text="@string/percentageText"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            tools:ignore="TouchTargetSizeCheck" />
+
+    </RelativeLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="6sp"
         android:layout_marginEnd="6sp"
+        android:baselineAligned="true"
         android:orientation="horizontal">
 
         <TextView
@@ -112,9 +178,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:onClick="setMessage"
             android:text="@string/about_the_app"
             android:textAlignment="textEnd"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
 

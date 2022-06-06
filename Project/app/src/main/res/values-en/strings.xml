@@ -22,4 +22,5 @@
     <string name="video">Video</string>
     <string name="placeDescription">Place Description</string>
     <string name="readtext">Read text</string>
+    <string name="accommodationDescription">Accommodation Description</string>
 </resources>

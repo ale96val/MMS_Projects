@@ -1,11 +1,13 @@
 package com.example.project;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -81,6 +83,20 @@ public class MainActivity extends AppCompatActivity {
         Intent refresh = new Intent(this, MainActivity.class);
         finish();
         startActivity(refresh);
+    }
+
+    public void setMessage(View view){
+        Context context = getApplicationContext();
+        Locale current = getResources().getConfiguration().locale;
+        CharSequence text;
+        if(current.toString().equals("en_US") || current.toString().equals("en_us")) {
+            text = "Application Developed for Mobile and Multimedia Course Project 2022";
+        }else{
+            text = "Aplicación Desarrollada para el proyecto del curso de Móviles y Multimedia 2022";
+        }
+        int duration = Toast.LENGTH_LONG;
+        Toast toast = Toast.makeText(context, text, duration);
+        toast.show();
     }
 }
 

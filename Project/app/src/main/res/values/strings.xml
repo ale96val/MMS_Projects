@@ -22,4 +22,6 @@
     <string name="placeDescription">Accommodation Descrition</string>
     <string name="readtext">Read text</string>
     <string name="accommodationDescription">Accommodation Description</string>
+    <string name="percentage">64%</string>
+    <string name="percentageText">64% of our customers left good reviews after they visited this app</string>
 </resources>

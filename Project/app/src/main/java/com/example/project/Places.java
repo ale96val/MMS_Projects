@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class Places extends AppCompatActivity {
@@ -32,12 +33,21 @@ public class Places extends AppCompatActivity {
         setContentView(R.layout.places);
         RecyclerView eventList = findViewById(R.id.accommodationList);
         eventList.setAdapter(adapter);
+        Locale current = getResources().getConfiguration().locale;
         eventList.setLayoutManager(new LinearLayoutManager(this));
-        StringSet.add("Rynek Square,9,Ul. Rynek (Wroclaw),free");
-        StringSet.add("Zoo,10,Ul. Tramwajowa,60zl");
-        StringSet.add("Wroclaw Urzad Mieski,6,Ul. Arkady Capitol (Wroclaw),free");
-        StringSet.add("Wyspa Slodowa,9,Plac Bema (Wroclaw),free");
-        StringSet.add("Main Train Station,10, Wroclaw Glowny (Wroclaw),free");
+        if(current.toString().equals("en_US") || current.toString().equals("en_us")) {
+            StringSet.add("Rynek Square,9,Ul. Rynek (Wroclaw),free");
+            StringSet.add("Zoo,10,Ul. Tramwajowa (Wroclaw),60zl");
+            StringSet.add("Wroclaw Urzad Mieski,6,Ul. Arkady Capitol (Wroclaw),free");
+            StringSet.add("Wyspa Slodowa,9,Plac Bema (Wroclaw),free");
+            StringSet.add("Main Train Station,10, Wroclaw Glowny (Wroclaw),free");
+        }else{
+            StringSet.add("Plaza del mercado, 9, Rynek (Wroclaw), gratis");
+            StringSet.add("Zoo, 10, Calle Tramwajowa (Wroclaw), 60zl");
+            StringSet.add("Ayuntamiento de Wroclaw, 6, Calle Arkady Capitol (Wroclaw), gratis");
+            StringSet.add("Isla Slodowa, 9, Plaza Bema (Wroclaw), gratis");
+            StringSet.add("Estación de Wroclaw, 10, Wroclaw Glowny (Wroclaw), free");
+        }
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(eventList);
     }
@@ -115,13 +125,13 @@ public class Places extends AppCompatActivity {
             PlaceRate.setText(Task.split(",")[1]);
             PlaceLocation.setText(Task.split(",")[2]);
             PlacePrice.setText(Task.split(",")[3]);
-            if(PlaceTitle.getText().equals("Rynek Square")){
+            if(PlaceTitle.getText().equals("Rynek Square") || PlaceTitle.getText().equals("Plaza del mercado")){
                 PlaceImage.setImageResource(R.drawable.skyscrapper_foreground);
             }else if(PlaceTitle.getText().equals("Zoo")){
                 PlaceImage.setImageResource(R.drawable.house_foreground);
-            }else if(PlaceTitle.getText().equals("Wroclaw Urzad Mieski")){
+            }else if(PlaceTitle.getText().equals("Wroclaw Urzad Mieski") || PlaceTitle.getText().equals("Ayuntamiento de Wroclaw")){
                 PlaceImage.setImageResource(R.drawable.studenthouse_foreground);
-            }else if(PlaceTitle.getText().equals("Wyspa Slodowa")){
+            }else if(PlaceTitle.getText().equals("Wyspa Slodowa") || PlaceTitle.getText().equals("Isla Slodowa")){
                 PlaceImage.setImageResource(R.drawable.ic_launcher_background);
             }else{
                 PlaceImage.setImageResource(R.drawable.ic_launcher_background);

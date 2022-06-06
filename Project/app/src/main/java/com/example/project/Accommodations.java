@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 
 public class Accommodations extends AppCompatActivity {
@@ -33,11 +34,20 @@ public class Accommodations extends AppCompatActivity {
         RecyclerView eventList = findViewById(R.id.accommodationList);
         eventList.setAdapter(adapter);
         eventList.setLayoutManager(new LinearLayoutManager(this));
-        StringSet.add("Hotel Warszawa,9,Ul. Swidnicka (Wroclaw),100zl/night");
-        StringSet.add("Appartament City Centre,10,Rynek (Wroclaw),200zl/night");
-        StringSet.add("Hostel Studenkie,6,Ul. Tramwajowa (Wroclaw),20zl/night");
-        StringSet.add("Hostel EuroStars,9,Ul. Poznanska (Wroclaw),100zl/night");
-        StringSet.add("Hostel Lux,10,Arkady Capitol (Wroclaw),200zl/night");
+        Locale current = getResources().getConfiguration().locale;
+        if(current.toString().equals("en_US") || current.toString().equals("en_us")) {
+            StringSet.add("Hotel Warszawa,9,Ul. Swidnicka (Wroclaw),100zl/night");
+            StringSet.add("Appartament City Centre,10,Rynek (Wroclaw),200zl/night");
+            StringSet.add("Hostel Studenkie,6,Ul. Tramwajowa (Wroclaw),20zl/night");
+            StringSet.add("Hostel EuroStars,9,Ul. Poznanska (Wroclaw),100zl/night");
+            StringSet.add("Hostel Lux,10,Arkady Capitol (Wroclaw),200zl/night");
+        }else{
+            StringSet.add("Hotel Varsovia, 9, Calle Swidnicka (Wroclaw), 100zl/noche");
+            StringSet.add("Apartametos Centro Ciudad, 10, Rynek (Wroclaw), 200zl/noche");
+            StringSet.add("Hostal de estudiantes, 6, Calle Tramwajowa (Wroclaw), 20zl/noche");
+            StringSet.add("Hotel EuroStars, 9, Calle Poznanska (Wroclaw), 100zl/noche");
+            StringSet.add("Hootel Lux, 10, ArkadyCapitol (Wroclaw), 200zl/noche");
+        }
         ItemTouchHelper itemTouchHelper = new ItemTouchHelper(simpleCallback);
         itemTouchHelper.attachToRecyclerView(eventList);
     }
@@ -118,7 +128,7 @@ public class Accommodations extends AppCompatActivity {
             AccommodationPrice.setText(Task.split(",")[3]);
             if(AccommodationTitle.getText().equals("Hotel Warszawa")){
                 AccommodationImage.setImageResource(R.drawable.skyscrapper_foreground);
-            }else if(AccommodationTitle.getText().equals("Appartament City Centre")){
+            }else if(AccommodationTitle.getText().equals("Appartament City Centre") || AccommodationTitle.getText().equals("Apartamentos Centro Ciudad")){
                 AccommodationImage.setImageResource(R.drawable.house_foreground);
             }else if(AccommodationTitle.getText().equals("Hostel Studenkie")){
                 AccommodationImage.setImageResource(R.drawable.studenthouse_foreground);

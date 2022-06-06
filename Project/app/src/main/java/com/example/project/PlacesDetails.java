@@ -29,7 +29,7 @@ public class PlacesDetails extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.placesdetails);
         WebView myWebView;
-        myWebView = (WebView) findViewById(R.id.mapview);
+        myWebView = findViewById(R.id.mapview);
         myWebView.getSettings().setJavaScriptEnabled(true);
         myWebView.setWebViewClient(new WebViewClient());
         Bundle extras = getIntent().getExtras();
@@ -47,9 +47,8 @@ public class PlacesDetails extends AppCompatActivity {
                 return super.shouldOverrideUrlLoading(view, request);
             }
         });
-        String frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/xzIMSKN7a2c?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
-        webView.loadData(frameVideo, "text/html", "utf-8");
-        if(placeRecieved.contains("Rynek")) {
+        String frameVideo;
+        if (placeRecieved.contains("Rynek")) {
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
             myWebView.loadUrl("https://goo.gl/maps/aMvbGpsZSHLGhEEC9");
@@ -57,6 +56,8 @@ public class PlacesDetails extends AppCompatActivity {
             img2.setImageResource(R.drawable.theater_icon);
             img3.setImageResource(R.drawable.theater_icon);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
+            frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/xzIMSKN7a2c?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
+            webView.loadData(frameVideo, "text/html", "utf-8");
         }else if(placeRecieved.contains("Zoo")) {
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
@@ -65,6 +66,8 @@ public class PlacesDetails extends AppCompatActivity {
             img2.setImageResource(R.drawable.trip_icon);
             img3.setImageResource(R.drawable.trip_icon);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
+            frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/cMUzOFVI5LI?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
+            webView.loadData(frameVideo, "text/html", "utf-8");
         }else if(placeRecieved.contains("Wroclaw")){
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
@@ -73,6 +76,8 @@ public class PlacesDetails extends AppCompatActivity {
             img2.setImageResource(R.drawable.skyscrapper_foreground);
             img3.setImageResource(R.drawable.skyscrapper_foreground);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
+            frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/Gc7_MeFnSaU?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
+            webView.loadData(frameVideo, "text/html", "utf-8");
         }else if(placeRecieved.contains("Slodowa")){
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
