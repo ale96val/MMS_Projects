@@ -25,4 +25,11 @@
     <string name="accommodationDescription">Accommodation Description</string>
     <string name="percentageText">64% of our customers left good reviews after they visited this app</string>
     <string name="percentageText2">60% of out customer keep the application installed on their phones</string>
+    <string name="r1">The description of the place was accurated, I could go back to this place</string>
+    <string name="randomuser">Polish customer</string>
+    <string name="randomuser2">Estonian customer</string>
+    <string name="randomuser3">Czek customer</string>
+    <string name="verified">Verified</string>
+    <string name="r2">The images of the place was accurated, I could go back to this place</string>
+    <string name="r3">The description of the site was accurated, I could go back to this place</string>
 </resources>

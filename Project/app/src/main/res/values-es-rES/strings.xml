@@ -25,4 +25,11 @@
     <string name="accommodationDescription">Descripción del alojamiento</string>
     <string name="percentageText">64% de los clientes dejaron una valoración positiva después de usar la app</string>
     <string name="percentageText2">64% de los clientes mantienen la aplicación instalada en sus teléfono</string>
+    <string name="r1">La descripción del lugar era correcta</string>
+    <string name="randomuser">Cliente polaco</string>
+    <string name="r2">Las imágenes del lugar eran correctas</string>
+    <string name="randomuser2">Cliente de Estonia</string>
+    <string name="r3">La descripción del sitio era correcto</string>
+    <string name="randomuser3">Cliente de República Checa</string>
+    <string name="verified">Verificado</string>
 </resources>
