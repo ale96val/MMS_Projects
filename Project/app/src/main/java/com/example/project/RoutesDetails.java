@@ -27,7 +27,7 @@ public class RoutesDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.routesdetails);
+        //setContentView(R.layout.routesdetails);
         WebView myWebView;
         myWebView = findViewById(R.id.mapview);
         myWebView.getSettings().setJavaScriptEnabled(true);

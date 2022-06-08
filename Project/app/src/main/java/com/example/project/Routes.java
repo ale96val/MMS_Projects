@@ -121,9 +121,9 @@ public class Routes extends AppCompatActivity {
             PlaceRate.setText(Task.split(",")[1]);
             PlaceLocation.setText(Task.split(",")[2]);
             PlacePrice.setText(Task.split(",")[3]);
-            if(PlaceTitle.getText().equals("Mountains near Wroclaw") || PlaceTitle.getText().equals("Montañas cerca de Wroclaw")){
+            if(PlaceTitle.getText().equals("Mountains near to Wroclaw") || PlaceTitle.getText().equals("Montañas cerca de Wroclaw")){
                 PlaceImage.setImageResource(R.drawable.trip_icon);
-            }else if(PlaceTitle.getText().equals("City Tour") || PlaceTitle.getText().equals("Tour por la ciudad")){
+            }else if(PlaceTitle.getText().equals("City tour") || PlaceTitle.getText().equals("Tour por la ciudad")){
                 PlaceImage.setImageResource(R.drawable.ic_baseline_wb_cloudy_24);
             }else{
                 PlaceImage.setImageResource(R.drawable.studenthouse_foreground);
