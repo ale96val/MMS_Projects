@@ -16,6 +16,7 @@
         <entry key="app/src/main/res/layout/accommodations.xml" value="0.11550151975683891" />
         <entry key="app/src/main/res/layout/activity_chooser.xml" value="0.1453125" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/asd.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/evens.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/events.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/eventsdetails.xml" value="0.1" />
@@ -26,6 +27,9 @@
         <entry key="app/src/main/res/layout/places.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/layout/placesdatails.xml" value="0.1984375" />
         <entry key="app/src/main/res/layout/placesdetails.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/routedetails.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/routes.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/routesdetails.xml" value="0.3098958333333333" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/skyscrapper.xml" value="0.1" />
       </map>
     </option>

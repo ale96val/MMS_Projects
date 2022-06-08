@@ -65,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, Accommodations.class);
         startActivity(intent);
     }
+    public void gotoRoutes(View view){
+        Intent intent = new Intent(this, Routes.class);
+        startActivity(intent);
+    }
 
     public void switchLanguage(View view) {
         Locale myLocale;

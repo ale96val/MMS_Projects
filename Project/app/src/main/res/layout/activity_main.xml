@@ -84,6 +84,7 @@
             android:layout_marginStart="2sp"
             android:layout_weight="1"
             android:backgroundTint="#4C5352"
+            android:onClick="gotoRoutes"
             android:text="@string/guided_tours"
             android:textColor="#FFFFFF"
             app:iconTint="#FFFFFF" />
