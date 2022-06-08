@@ -132,9 +132,9 @@ public class Places extends AppCompatActivity {
             }else if(PlaceTitle.getText().equals("Wroclaw Urzad Mieski") || PlaceTitle.getText().equals("Ayuntamiento de Wroclaw")){
                 PlaceImage.setImageResource(R.drawable.studenthouse_foreground);
             }else if(PlaceTitle.getText().equals("Wyspa Slodowa") || PlaceTitle.getText().equals("Isla Slodowa")){
-                PlaceImage.setImageResource(R.drawable.ic_launcher_background);
+                PlaceImage.setImageResource(R.drawable.ic_baseline_wb_cloudy_24);
             }else{
-                PlaceImage.setImageResource(R.drawable.ic_launcher_background);
+                PlaceImage.setImageResource(R.drawable.trip_icon);
             }
         }
 

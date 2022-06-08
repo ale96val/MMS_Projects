@@ -53,8 +53,8 @@ public class PlacesDetails extends AppCompatActivity {
             description.setText(placeRecieved);
             myWebView.loadUrl("https://goo.gl/maps/aMvbGpsZSHLGhEEC9");
             img1.setImageResource(R.drawable.theater_icon);
-            img2.setImageResource(R.drawable.theater_icon);
-            img3.setImageResource(R.drawable.theater_icon);
+            img2.setImageResource(R.drawable.house_foreground);
+            img3.setImageResource(R.drawable.studenthouse_foreground);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
             frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/xzIMSKN7a2c?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
             webView.loadData(frameVideo, "text/html", "utf-8");
@@ -63,7 +63,7 @@ public class PlacesDetails extends AppCompatActivity {
             description.setText(placeRecieved);
             myWebView.loadUrl("https://goo.gl/maps/VTLV2CNcGzndg3bQ6");
             img1.setImageResource(R.drawable.trip_icon);
-            img2.setImageResource(R.drawable.trip_icon);
+            img2.setImageResource(R.drawable.ic_baseline_wb_cloudy_24);
             img3.setImageResource(R.drawable.trip_icon);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
             frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/cMUzOFVI5LI?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
@@ -73,8 +73,8 @@ public class PlacesDetails extends AppCompatActivity {
             description.setText(placeRecieved);
             myWebView.loadUrl("https://goo.gl/maps/Qe14drqFZfsS4HPt9");
             img1.setImageResource(R.drawable.skyscrapper_foreground);
-            img2.setImageResource(R.drawable.skyscrapper_foreground);
-            img3.setImageResource(R.drawable.skyscrapper_foreground);
+            img2.setImageResource(R.drawable.house_foreground);
+            img3.setImageResource(R.drawable.studenthouse_foreground);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
             frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/Gc7_MeFnSaU?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
             webView.loadData(frameVideo, "text/html", "utf-8");
@@ -82,17 +82,17 @@ public class PlacesDetails extends AppCompatActivity {
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
             myWebView.loadUrl("https://g.page/slodowa?share");
-            img1.setImageResource(R.drawable.skyscrapper_foreground);
+            img1.setImageResource(R.drawable.ic_baseline_wb_cloudy_24);
             img2.setImageResource(R.drawable.skyscrapper_foreground);
-            img3.setImageResource(R.drawable.skyscrapper_foreground);
+            img3.setImageResource(R.drawable.studenthouse_foreground);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
         }else{
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
             myWebView.loadUrl("https://goo.gl/maps/PteUbDEWyxy8xKgCA");
             img1.setImageResource(R.drawable.skyscrapper_foreground);
-            img2.setImageResource(R.drawable.skyscrapper_foreground);
-            img3.setImageResource(R.drawable.skyscrapper_foreground);
+            img2.setImageResource(R.drawable.trip_icon);
+            img3.setImageResource(R.drawable.studenthouse_foreground);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
         }
     }

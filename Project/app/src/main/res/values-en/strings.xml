@@ -24,4 +24,5 @@
     <string name="readtext">Read text</string>
     <string name="accommodationDescription">Accommodation Description</string>
     <string name="percentageText">64% of our customers left good reviews after they visited this app</string>
+    <string name="percentageText2">60% of out customer keep the application installed on their phones</string>
 </resources>

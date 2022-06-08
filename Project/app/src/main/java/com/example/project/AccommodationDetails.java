@@ -41,41 +41,41 @@ public class AccommodationDetails extends AppCompatActivity {
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
             myWebView.loadUrl("https://goo.gl/maps/wbPy5dntVcn23YCw8");
-            img1.setImageResource(R.drawable.theater_icon);
-            img2.setImageResource(R.drawable.theater_icon);
-            img3.setImageResource(R.drawable.theater_icon);
+            img1.setImageResource(R.drawable.skyscrapper_foreground);
+            img2.setImageResource(R.drawable.studenthouse_foreground);
+            img3.setImageResource(R.drawable.house_foreground);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
         }else if(placeRecieved.contains("Appartament")) {
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
             myWebView.loadUrl("https://goo.gl/maps/eQTm28vYtQhxYfgJ6");
             img1.setImageResource(R.drawable.trip_icon);
-            img2.setImageResource(R.drawable.trip_icon);
-            img3.setImageResource(R.drawable.trip_icon);
+            img2.setImageResource(R.drawable.house_foreground);
+            img3.setImageResource(R.drawable.studenthouse_foreground);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
         }else if(placeRecieved.contains("Studenkie")){
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
             myWebView.loadUrl("https://goo.gl/maps/Aiq9q3Kxyw8Z8Zjn8");
-            img1.setImageResource(R.drawable.skyscrapper_foreground);
+            img1.setImageResource(R.drawable.studenthouse_foreground);
             img2.setImageResource(R.drawable.skyscrapper_foreground);
-            img3.setImageResource(R.drawable.skyscrapper_foreground);
+            img3.setImageResource(R.drawable.house_foreground);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
         }else if(placeRecieved.contains("EuroStars")){
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
             myWebView.loadUrl("https://goo.gl/maps/wJaLLLkheEQFroSX7");
             img1.setImageResource(R.drawable.skyscrapper_foreground);
-            img2.setImageResource(R.drawable.skyscrapper_foreground);
-            img3.setImageResource(R.drawable.skyscrapper_foreground);
+            img2.setImageResource(R.drawable.house_foreground);
+            img3.setImageResource(R.drawable.studenthouse_foreground);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
         }else{
             title.setText(placeRecieved.split(",")[0]);
             description.setText(placeRecieved);
             myWebView.loadUrl("https://goo.gl/maps/WzaiqiTZSfXVHWok6");
             img1.setImageResource(R.drawable.skyscrapper_foreground);
-            img2.setImageResource(R.drawable.skyscrapper_foreground);
-            img3.setImageResource(R.drawable.skyscrapper_foreground);
+            img2.setImageResource(R.drawable.trip_icon);
+            img3.setImageResource(R.drawable.house_foreground);
             evaluation.setRating(Float.parseFloat(placeRecieved.split(",")[1]));
         }
     }
