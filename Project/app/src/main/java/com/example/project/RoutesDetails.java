@@ -27,7 +27,7 @@ public class RoutesDetails extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.routesdetails);
+        setContentView(R.layout.routesdetails);
         WebView myWebView;
         myWebView = findViewById(R.id.mapview);
         myWebView.getSettings().setJavaScriptEnabled(true);
@@ -51,19 +51,19 @@ public class RoutesDetails extends AppCompatActivity {
         if (routeRecieved.contains("Mo")) {
             title.setText(routeRecieved.split(",")[0]);
             description.setText(routeRecieved);
-            myWebView.loadUrl("https://goo.gl/maps/aMvbGpsZSHLGhEEC9");
-            img1.setImageResource(R.drawable.theater_icon);
-            img2.setImageResource(R.drawable.theater_icon);
+            myWebView.loadUrl("https://www.google.com/maps/d/embed?mid=1CIWPzm8PuHZ7lVs2s-9aZXVIQZw&hl=pl&ehbc=2E312F");
+            img1.setImageResource(R.drawable.ic_baseline_wb_cloudy_24);
+            img2.setImageResource(R.drawable.trip_icon);
             img3.setImageResource(R.drawable.theater_icon);
             evaluation.setRating(Float.parseFloat(routeRecieved.split(",")[1]));
-            frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/xzIMSKN7a2c?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
+            frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/1B2pXaQmHsY?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
             webView.loadData(frameVideo, "text/html", "utf-8");
-        }else if(routeRecieved.contains("Tour")) {
+        }else if(routeRecieved.contains("tour")) {
             title.setText(routeRecieved.split(",")[0]);
             description.setText(routeRecieved);
-            myWebView.loadUrl("https://goo.gl/maps/VTLV2CNcGzndg3bQ6");
-            img1.setImageResource(R.drawable.trip_icon);
-            img2.setImageResource(R.drawable.trip_icon);
+            myWebView.loadUrl("https://www.google.com/maps/d/embed?mid=1QUOKTxeKyAm9iKtRKXz05R8yYoXwV6fo&hl=en_US&ehbc=2E312F");
+            img1.setImageResource(R.drawable.skyscrapper_foreground);
+            img2.setImageResource(R.drawable.house_foreground);
             img3.setImageResource(R.drawable.trip_icon);
             evaluation.setRating(Float.parseFloat(routeRecieved.split(",")[1]));
             frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/cMUzOFVI5LI?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
@@ -71,11 +71,13 @@ public class RoutesDetails extends AppCompatActivity {
         }else{
             title.setText(routeRecieved.split(",")[0]);
             description.setText(routeRecieved);
-            myWebView.loadUrl("https://goo.gl/maps/PteUbDEWyxy8xKgCA");
+            myWebView.loadUrl("https://www.google.com/maps/d/embed?mid=1DskQdfaYxcuuxMP8nLUoHzkoT0I&hl=cs&ehbc=2E312F");
             img1.setImageResource(R.drawable.skyscrapper_foreground);
             img2.setImageResource(R.drawable.skyscrapper_foreground);
             img3.setImageResource(R.drawable.skyscrapper_foreground);
             evaluation.setRating(Float.parseFloat(routeRecieved.split(",")[1]));
+            frameVideo = "<html><body><iframe width=\"340\" height=\"340\" src=\"https://www.youtube.com/embed/xluQv1X1I6Y?end=30;\" frameborder=\"0\" allowfullscreen></iframe></body></html>";
+            webView.loadData(frameVideo, "text/html", "utf-8");
         }
     }
     private void speak(String text){
