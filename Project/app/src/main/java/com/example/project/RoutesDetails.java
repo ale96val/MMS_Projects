@@ -129,7 +129,8 @@ public class RoutesDetails extends AppCompatActivity {
             readtext.shutdown();
         }
         super.onDestroy();
-
     }
 }
+
+
 
